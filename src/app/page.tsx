@@ -32,6 +32,9 @@ export default function Home() {
       const res = await fetch('https://mohammadnsairat6.app.n8n.cloud/webhook/analyze-cv', {
         method: 'POST',
         body: formData,
+        headers: {
+          [process.env.NEXT_PUBLIC_HEADER_NAME!]: process.env.NEXT_PUBLIC_HEADER_VALUE!,
+        },
       });
 
       if (!res.ok) {
@@ -64,6 +67,9 @@ export default function Home() {
       const response = await fetch('https://mohammadnsairat6.app.n8n.cloud/webhook/generate-pdf', {
         method: 'POST',
         body: formData,
+        headers: {
+          [process.env.NEXT_PUBLIC_HEADER_NAME!]: process.env.NEXT_PUBLIC_HEADER_VALUE!,
+        },
       });
 
       if (!response.ok) {
